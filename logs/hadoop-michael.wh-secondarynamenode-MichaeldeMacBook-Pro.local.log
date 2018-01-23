@@ -1,0 +1,987 @@
+2018-01-23 18:17:48,018 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting SecondaryNameNode
+STARTUP_MSG:   host = michaeldemacbook-pro.local/30.28.160.77
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 2.7.5
+STARTUP_MSG:   classpath = /Users/michael.wh/workspace/hadoop-2.7.5/etc/hadoop:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/activation-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/apacheds-i18n-2.0.0-M15.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/api-asn1-api-1.0.0-M20.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/api-util-1.0.0-M20.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/avro-1.7.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-beanutils-1.7.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-beanutils-core-1.8.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-collections-3.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-configuration-1.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-digester-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-httpclient-3.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-math3-3.1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-net-3.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-client-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-framework-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-recipes-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/gson-2.2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hadoop-annotations-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hadoop-auth-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hamcrest-core-1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/htrace-core-3.1.0-incubating.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/httpclient-4.2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/httpcore-4.2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/java-xmlbuilder-0.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jaxb-api-2.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-json-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jets3t-0.9.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jettison-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-sslengine-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsch-0.1.54.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsp-api-2.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/junit-4.11.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/mockito-all-1.8.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/paranamer-2.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/slf4j-api-1.7.10.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/snappy-java-1.0.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/stax-api-1.0-2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/xmlenc-0.52.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/zookeeper-3.4.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-common-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-nfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/htrace-core-3.1.0-incubating.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/netty-all-4.0.23.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xercesImpl-2.9.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xml-apis-1.3.04.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xmlenc-0.52.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-nfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/activation-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/aopalliance-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-collections-3.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guice-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guice-servlet-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-jaxrs-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-xc-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/javax.inject-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jaxb-api-2.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jaxb-impl-2.2.3-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-client-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-guice-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-json-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jettison-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/stax-api-1.0-2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/zookeeper-3.4.6-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/zookeeper-3.4.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-api-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-client-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-registry-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-nodemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-tests-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-web-proxy-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/aopalliance-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/avro-1.7.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/guice-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/guice-servlet-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/hadoop-annotations-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/javax.inject-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-guice-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/junit-4.11.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/paranamer-2.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/snappy-java-1.0.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.5.jar:/contrib/capacity-scheduler/*.jar:/contrib/capacity-scheduler/*.jar:/contrib/capacity-scheduler/*.jar
+STARTUP_MSG:   build = https://shv@git-wip-us.apache.org/repos/asf/hadoop.git -r 18065c2b6806ed4aa6a3187d77cbe21bb3dba075; compiled by 'kshvachk' on 2017-12-16T01:06Z
+STARTUP_MSG:   java = 1.8.0_101
+************************************************************/
+2018-01-23 18:17:48,028 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+2018-01-23 18:17:48,427 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-01-23 18:17:48,562 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2018-01-23 18:17:48,634 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2018-01-23 18:17:48,634 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: SecondaryNameNode metrics system started
+2018-01-23 18:17:48,830 INFO org.apache.hadoop.hdfs.server.common.Storage: Lock on /tmp/hadoop-michael.wh/dfs/namesecondary/in_use.lock acquired by nodename 98532@michaeldemacbook-pro.local
+2018-01-23 18:17:48,837 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: No KeyProvider found.
+2018-01-23 18:17:48,838 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsLock is fair: true
+2018-01-23 18:17:48,839 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Detailed lock hold time metrics enabled: false
+2018-01-23 18:17:48,873 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.block.invalidate.limit=1000
+2018-01-23 18:17:48,873 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+2018-01-23 18:17:48,874 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2018-01-23 18:17:48,875 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: The block deletion will start around 2018 一月 23 18:17:48
+2018-01-23 18:17:48,877 INFO org.apache.hadoop.util.GSet: Computing capacity for map BlocksMap
+2018-01-23 18:17:48,877 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:17:48,878 INFO org.apache.hadoop.util.GSet: 2.0% max memory 889 MB = 17.8 MB
+2018-01-23 18:17:48,878 INFO org.apache.hadoop.util.GSet: capacity      = 2^21 = 2097152 entries
+2018-01-23 18:17:48,888 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.block.access.token.enable=false
+2018-01-23 18:17:48,889 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: defaultReplication         = 1
+2018-01-23 18:17:48,889 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplication             = 512
+2018-01-23 18:17:48,889 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: minReplication             = 1
+2018-01-23 18:17:48,889 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplicationStreams      = 2
+2018-01-23 18:17:48,889 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: replicationRecheckInterval = 3000
+2018-01-23 18:17:48,889 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: encryptDataTransfer        = false
+2018-01-23 18:17:48,889 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+2018-01-23 18:17:48,890 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner             = michael.wh (auth:SIMPLE)
+2018-01-23 18:17:48,890 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup          = supergroup
+2018-01-23 18:17:48,890 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled = true
+2018-01-23 18:17:48,891 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: HA Enabled: false
+2018-01-23 18:17:48,892 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Append Enabled: true
+2018-01-23 18:17:49,077 INFO org.apache.hadoop.util.GSet: Computing capacity for map INodeMap
+2018-01-23 18:17:49,077 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:17:49,077 INFO org.apache.hadoop.util.GSet: 1.0% max memory 889 MB = 8.9 MB
+2018-01-23 18:17:49,077 INFO org.apache.hadoop.util.GSet: capacity      = 2^20 = 1048576 entries
+2018-01-23 18:17:49,078 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: ACLs enabled? false
+2018-01-23 18:17:49,078 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: XAttrs enabled? true
+2018-01-23 18:17:49,078 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: Maximum size of an xattr: 16384
+2018-01-23 18:17:49,078 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times
+2018-01-23 18:17:49,085 INFO org.apache.hadoop.util.GSet: Computing capacity for map cachedBlocks
+2018-01-23 18:17:49,085 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:17:49,085 INFO org.apache.hadoop.util.GSet: 0.25% max memory 889 MB = 2.2 MB
+2018-01-23 18:17:49,085 INFO org.apache.hadoop.util.GSet: capacity      = 2^18 = 262144 entries
+2018-01-23 18:17:49,087 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+2018-01-23 18:17:49,087 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.min.datanodes = 0
+2018-01-23 18:17:49,087 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.extension     = 30000
+2018-01-23 18:17:49,090 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2018-01-23 18:17:49,090 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10
+2018-01-23 18:17:49,090 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2018-01-23 18:17:49,105 INFO org.apache.hadoop.hdfs.DFSUtil: Starting Web-server for secondary at: http://0.0.0.0:50090
+2018-01-23 18:17:49,162 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2018-01-23 18:17:49,170 INFO org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2018-01-23 18:17:49,174 INFO org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.secondary is not defined
+2018-01-23 18:17:49,179 INFO org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2018-01-23 18:17:49,181 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context secondary
+2018-01-23 18:17:49,181 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2018-01-23 18:17:49,181 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2018-01-23 18:17:49,208 INFO org.apache.hadoop.http.HttpServer2: Jetty bound to port 50090
+2018-01-23 18:17:49,208 INFO org.mortbay.log: jetty-6.1.26
+2018-01-23 18:17:49,350 INFO org.mortbay.log: Started HttpServer2$SelectChannelConnectorWithSafeStartup@0.0.0.0:50090
+2018-01-23 18:17:49,350 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Web server init done
+2018-01-23 18:17:49,351 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint Period   :3600 secs (60 min)
+2018-01-23 18:17:49,352 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Log Size Trigger    :1000000 txns
+2018-01-23 18:18:50,408 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:51,411 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:52,417 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:53,419 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:54,422 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:55,425 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:56,430 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:57,435 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:58,439 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:59,444 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:18:59,453 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:20:00,471 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:01,476 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:02,482 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:03,484 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:04,486 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:05,488 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:06,493 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:07,495 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:08,500 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:09,502 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:20:09,506 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:21:10,519 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:11,522 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:12,528 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:13,533 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:14,535 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:15,540 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:16,546 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:17,548 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:18,554 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:19,557 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:21:19,562 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:22:20,577 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:21,583 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:22,587 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:23,592 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:24,594 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:25,598 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:26,599 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:27,605 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:28,607 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:29,611 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:22:29,616 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:23:30,634 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:31,639 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:32,644 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:33,648 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:34,652 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:35,656 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:36,659 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:37,664 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:38,667 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:39,672 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:23:39,677 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:24:40,692 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:41,696 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:42,701 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:43,705 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:44,710 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:45,714 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:46,718 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:47,724 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:48,726 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:49,730 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:24:49,734 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:25:50,748 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:51,754 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:52,760 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:53,763 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:54,767 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:55,770 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:56,772 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:57,776 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:58,780 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:59,781 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:25:59,785 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:27:00,797 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:01,802 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:02,804 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:03,810 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:04,815 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:05,818 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:06,822 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:07,827 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:08,832 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:09,835 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:27:09,839 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:28:10,852 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:11,859 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:12,861 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:13,866 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:14,872 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:15,876 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:16,878 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:17,884 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:18,889 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:19,894 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:28:19,897 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:29:20,907 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:21,912 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:22,917 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:23,920 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:24,923 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:25,928 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:26,934 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:27,938 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:28,942 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:29,944 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:29:29,947 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:30:23,955 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: RECEIVED SIGNAL 15: SIGTERM
+2018-01-23 18:30:23,960 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down SecondaryNameNode at michaeldemacbook-pro.local/30.28.160.77
+************************************************************/
+2018-01-23 18:31:16,754 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting SecondaryNameNode
+STARTUP_MSG:   host = michaeldemacbook-pro.local/30.28.160.77
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 2.7.5
+STARTUP_MSG:   classpath = /Users/michael.wh/workspace/hadoop-2.7.5/etc/hadoop:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/activation-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/apacheds-i18n-2.0.0-M15.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/api-asn1-api-1.0.0-M20.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/api-util-1.0.0-M20.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/avro-1.7.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-beanutils-1.7.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-beanutils-core-1.8.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-collections-3.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-configuration-1.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-digester-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-httpclient-3.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-math3-3.1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-net-3.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-client-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-framework-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-recipes-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/gson-2.2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hadoop-annotations-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hadoop-auth-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hamcrest-core-1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/htrace-core-3.1.0-incubating.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/httpclient-4.2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/httpcore-4.2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/java-xmlbuilder-0.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jaxb-api-2.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-json-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jets3t-0.9.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jettison-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-sslengine-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsch-0.1.54.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsp-api-2.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/junit-4.11.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/mockito-all-1.8.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/paranamer-2.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/slf4j-api-1.7.10.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/snappy-java-1.0.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/stax-api-1.0-2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/xmlenc-0.52.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/zookeeper-3.4.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-common-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-nfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/htrace-core-3.1.0-incubating.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/netty-all-4.0.23.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xercesImpl-2.9.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xml-apis-1.3.04.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xmlenc-0.52.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-nfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/activation-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/aopalliance-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-collections-3.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guice-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guice-servlet-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-jaxrs-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-xc-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/javax.inject-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jaxb-api-2.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jaxb-impl-2.2.3-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-client-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-guice-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-json-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jettison-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/stax-api-1.0-2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/zookeeper-3.4.6-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/zookeeper-3.4.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-api-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-client-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-registry-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-nodemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-tests-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-web-proxy-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/aopalliance-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/avro-1.7.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/guice-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/guice-servlet-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/hadoop-annotations-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/javax.inject-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-guice-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/junit-4.11.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/paranamer-2.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/snappy-java-1.0.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.5.jar:/contrib/capacity-scheduler/*.jar:/contrib/capacity-scheduler/*.jar:/contrib/capacity-scheduler/*.jar
+STARTUP_MSG:   build = https://shv@git-wip-us.apache.org/repos/asf/hadoop.git -r 18065c2b6806ed4aa6a3187d77cbe21bb3dba075; compiled by 'kshvachk' on 2017-12-16T01:06Z
+STARTUP_MSG:   java = 1.8.0_101
+************************************************************/
+2018-01-23 18:31:16,765 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+2018-01-23 18:31:17,171 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-01-23 18:31:17,306 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2018-01-23 18:31:17,392 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2018-01-23 18:31:17,392 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: SecondaryNameNode metrics system started
+2018-01-23 18:31:17,640 INFO org.apache.hadoop.hdfs.server.common.Storage: Lock on /tmp/hadoop-michael.wh/dfs/namesecondary/in_use.lock acquired by nodename 99607@michaeldemacbook-pro.local
+2018-01-23 18:31:17,646 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: No KeyProvider found.
+2018-01-23 18:31:17,647 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsLock is fair: true
+2018-01-23 18:31:17,650 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Detailed lock hold time metrics enabled: false
+2018-01-23 18:31:17,693 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.block.invalidate.limit=1000
+2018-01-23 18:31:17,693 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+2018-01-23 18:31:17,694 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2018-01-23 18:31:17,696 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: The block deletion will start around 2018 一月 23 18:31:17
+2018-01-23 18:31:17,697 INFO org.apache.hadoop.util.GSet: Computing capacity for map BlocksMap
+2018-01-23 18:31:17,697 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:31:17,699 INFO org.apache.hadoop.util.GSet: 2.0% max memory 889 MB = 17.8 MB
+2018-01-23 18:31:17,700 INFO org.apache.hadoop.util.GSet: capacity      = 2^21 = 2097152 entries
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.block.access.token.enable=false
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: defaultReplication         = 1
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplication             = 512
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: minReplication             = 1
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplicationStreams      = 2
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: replicationRecheckInterval = 3000
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: encryptDataTransfer        = false
+2018-01-23 18:31:17,713 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+2018-01-23 18:31:17,715 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner             = michael.wh (auth:SIMPLE)
+2018-01-23 18:31:17,715 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup          = supergroup
+2018-01-23 18:31:17,715 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled = true
+2018-01-23 18:31:17,715 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: HA Enabled: false
+2018-01-23 18:31:17,719 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Append Enabled: true
+2018-01-23 18:31:17,928 INFO org.apache.hadoop.util.GSet: Computing capacity for map INodeMap
+2018-01-23 18:31:17,928 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:31:17,928 INFO org.apache.hadoop.util.GSet: 1.0% max memory 889 MB = 8.9 MB
+2018-01-23 18:31:17,928 INFO org.apache.hadoop.util.GSet: capacity      = 2^20 = 1048576 entries
+2018-01-23 18:31:17,932 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: ACLs enabled? false
+2018-01-23 18:31:17,932 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: XAttrs enabled? true
+2018-01-23 18:31:17,932 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: Maximum size of an xattr: 16384
+2018-01-23 18:31:17,932 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times
+2018-01-23 18:31:17,940 INFO org.apache.hadoop.util.GSet: Computing capacity for map cachedBlocks
+2018-01-23 18:31:17,940 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:31:17,940 INFO org.apache.hadoop.util.GSet: 0.25% max memory 889 MB = 2.2 MB
+2018-01-23 18:31:17,940 INFO org.apache.hadoop.util.GSet: capacity      = 2^18 = 262144 entries
+2018-01-23 18:31:17,943 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+2018-01-23 18:31:17,943 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.min.datanodes = 0
+2018-01-23 18:31:17,943 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.extension     = 30000
+2018-01-23 18:31:17,948 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2018-01-23 18:31:17,948 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10
+2018-01-23 18:31:17,948 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2018-01-23 18:31:17,965 INFO org.apache.hadoop.hdfs.DFSUtil: Starting Web-server for secondary at: http://0.0.0.0:50090
+2018-01-23 18:31:18,048 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2018-01-23 18:31:18,057 INFO org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2018-01-23 18:31:18,062 INFO org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.secondary is not defined
+2018-01-23 18:31:18,068 INFO org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2018-01-23 18:31:18,070 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context secondary
+2018-01-23 18:31:18,070 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2018-01-23 18:31:18,070 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2018-01-23 18:31:18,101 INFO org.apache.hadoop.http.HttpServer2: Jetty bound to port 50090
+2018-01-23 18:31:18,102 INFO org.mortbay.log: jetty-6.1.26
+2018-01-23 18:31:18,268 INFO org.mortbay.log: Started HttpServer2$SelectChannelConnectorWithSafeStartup@0.0.0.0:50090
+2018-01-23 18:31:18,268 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Web server init done
+2018-01-23 18:31:18,270 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint Period   :3600 secs (60 min)
+2018-01-23 18:31:18,270 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Log Size Trigger    :1000000 txns
+2018-01-23 18:32:19,326 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:20,332 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:21,337 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:22,343 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:23,348 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:24,354 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:25,358 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:26,362 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:27,368 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:28,373 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:32:28,378 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:33:29,395 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:30,399 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:31,403 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:32,409 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:33,413 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:34,418 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:35,423 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:36,425 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:37,430 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:38,434 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:33:38,438 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:34:39,447 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:40,452 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:41,455 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:42,461 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:43,463 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:44,469 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:45,471 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:46,476 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:47,479 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:48,485 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:34:48,490 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:35:49,499 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:50,505 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:51,508 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:52,514 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:53,519 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:54,524 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:55,526 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:56,528 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:57,533 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:58,539 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:35:58,544 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:36:59,556 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:00,558 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:01,565 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:02,569 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:03,575 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:04,578 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:05,582 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:06,584 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:07,589 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:08,591 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:9000. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2018-01-23 18:37:09,922 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Exception in doCheckpoint
+java.net.ConnectException: Call From michaeldemacbook-pro.local/30.28.160.77 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1480)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1413)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy10.getTransactionId(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.getTransactionID(NamenodeProtocolTranslatorPB.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy11.getTransactionID(Unknown Source)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.countUncheckpointedTxns(SecondaryNameNode.java:641)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.shouldCheckpointBasedOnCount(SecondaryNameNode.java:649)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:393)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:615)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:713)
+	at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:376)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1529)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1452)
+	... 18 more
+2018-01-23 18:37:35,470 ERROR org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: RECEIVED SIGNAL 15: SIGTERM
+2018-01-23 18:37:35,471 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down SecondaryNameNode at michaeldemacbook-pro.local/30.28.160.77
+************************************************************/
+2018-01-23 18:38:34,589 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting SecondaryNameNode
+STARTUP_MSG:   host = michaeldemacbook-pro.local/30.28.160.77
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 2.7.5
+STARTUP_MSG:   classpath = /Users/michael.wh/workspace/hadoop-2.7.5/etc/hadoop:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/activation-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/apacheds-i18n-2.0.0-M15.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/api-asn1-api-1.0.0-M20.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/api-util-1.0.0-M20.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/avro-1.7.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-beanutils-1.7.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-beanutils-core-1.8.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-collections-3.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-configuration-1.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-digester-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-httpclient-3.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-math3-3.1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/commons-net-3.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-client-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-framework-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/curator-recipes-2.7.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/gson-2.2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hadoop-annotations-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hadoop-auth-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/hamcrest-core-1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/htrace-core-3.1.0-incubating.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/httpclient-4.2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/httpcore-4.2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/java-xmlbuilder-0.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jaxb-api-2.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-json-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jets3t-0.9.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jettison-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-sslengine-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsch-0.1.54.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsp-api-2.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/junit-4.11.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/mockito-all-1.8.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/paranamer-2.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/slf4j-api-1.7.10.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/snappy-java-1.0.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/stax-api-1.0-2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/xmlenc-0.52.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/lib/zookeeper-3.4.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-common-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/common/hadoop-nfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/htrace-core-3.1.0-incubating.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/netty-all-4.0.23.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xercesImpl-2.9.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xml-apis-1.3.04.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/lib/xmlenc-0.52.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/hdfs/hadoop-hdfs-nfs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/activation-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/aopalliance-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-cli-1.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-codec-1.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-collections-3.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-lang-2.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/commons-logging-1.1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guava-11.0.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guice-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/guice-servlet-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-jaxrs-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jackson-xc-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/javax.inject-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jaxb-api-2.2.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jaxb-impl-2.2.3-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-client-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-guice-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-json-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jettison-1.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jetty-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jetty-util-6.1.26.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/jsr305-3.0.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/servlet-api-2.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/stax-api-1.0-2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/zookeeper-3.4.6-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/lib/zookeeper-3.4.6.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-api-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-client-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-registry-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-nodemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-tests-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/yarn/hadoop-yarn-server-web-proxy-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/aopalliance-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/asm-3.2.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/avro-1.7.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/commons-compress-1.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/commons-io-2.4.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/guice-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/guice-servlet-3.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/hadoop-annotations-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jackson-core-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/javax.inject-1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-core-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-guice-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/jersey-server-1.9.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/junit-4.11.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/leveldbjni-all-1.8.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/log4j-1.2.17.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/netty-3.6.2.Final.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/paranamer-2.3.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/protobuf-java-2.5.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/snappy-java-1.0.4.1.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/lib/xz-1.0.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.5-tests.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.7.5.jar:/Users/michael.wh/workspace/hadoop-2.7.5/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.5.jar:/contrib/capacity-scheduler/*.jar:/contrib/capacity-scheduler/*.jar:/contrib/capacity-scheduler/*.jar
+STARTUP_MSG:   build = https://shv@git-wip-us.apache.org/repos/asf/hadoop.git -r 18065c2b6806ed4aa6a3187d77cbe21bb3dba075; compiled by 'kshvachk' on 2017-12-16T01:06Z
+STARTUP_MSG:   java = 1.8.0_101
+************************************************************/
+2018-01-23 18:38:34,601 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+2018-01-23 18:38:34,998 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-01-23 18:38:35,132 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2018-01-23 18:38:35,204 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2018-01-23 18:38:35,204 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: SecondaryNameNode metrics system started
+2018-01-23 18:38:35,384 INFO org.apache.hadoop.hdfs.server.common.Storage: Lock on /tmp/hadoop-michael.wh/dfs/namesecondary/in_use.lock acquired by nodename 1099@michaeldemacbook-pro.local
+2018-01-23 18:38:35,391 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: No KeyProvider found.
+2018-01-23 18:38:35,392 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsLock is fair: true
+2018-01-23 18:38:35,393 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Detailed lock hold time metrics enabled: false
+2018-01-23 18:38:35,428 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.block.invalidate.limit=1000
+2018-01-23 18:38:35,428 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+2018-01-23 18:38:35,430 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2018-01-23 18:38:35,431 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: The block deletion will start around 2018 一月 23 18:38:35
+2018-01-23 18:38:35,433 INFO org.apache.hadoop.util.GSet: Computing capacity for map BlocksMap
+2018-01-23 18:38:35,433 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:38:35,434 INFO org.apache.hadoop.util.GSet: 2.0% max memory 889 MB = 17.8 MB
+2018-01-23 18:38:35,434 INFO org.apache.hadoop.util.GSet: capacity      = 2^21 = 2097152 entries
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.block.access.token.enable=false
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: defaultReplication         = 1
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplication             = 512
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: minReplication             = 1
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplicationStreams      = 2
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: replicationRecheckInterval = 3000
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: encryptDataTransfer        = false
+2018-01-23 18:38:35,445 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+2018-01-23 18:38:35,447 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner             = michael.wh (auth:SIMPLE)
+2018-01-23 18:38:35,447 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup          = supergroup
+2018-01-23 18:38:35,447 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled = true
+2018-01-23 18:38:35,447 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: HA Enabled: false
+2018-01-23 18:38:35,449 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Append Enabled: true
+2018-01-23 18:38:35,655 INFO org.apache.hadoop.util.GSet: Computing capacity for map INodeMap
+2018-01-23 18:38:35,655 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:38:35,655 INFO org.apache.hadoop.util.GSet: 1.0% max memory 889 MB = 8.9 MB
+2018-01-23 18:38:35,655 INFO org.apache.hadoop.util.GSet: capacity      = 2^20 = 1048576 entries
+2018-01-23 18:38:35,656 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: ACLs enabled? false
+2018-01-23 18:38:35,656 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: XAttrs enabled? true
+2018-01-23 18:38:35,657 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: Maximum size of an xattr: 16384
+2018-01-23 18:38:35,657 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times
+2018-01-23 18:38:35,664 INFO org.apache.hadoop.util.GSet: Computing capacity for map cachedBlocks
+2018-01-23 18:38:35,664 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2018-01-23 18:38:35,664 INFO org.apache.hadoop.util.GSet: 0.25% max memory 889 MB = 2.2 MB
+2018-01-23 18:38:35,664 INFO org.apache.hadoop.util.GSet: capacity      = 2^18 = 262144 entries
+2018-01-23 18:38:35,665 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+2018-01-23 18:38:35,666 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.min.datanodes = 0
+2018-01-23 18:38:35,666 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.namenode.safemode.extension     = 30000
+2018-01-23 18:38:35,669 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2018-01-23 18:38:35,669 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10
+2018-01-23 18:38:35,669 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2018-01-23 18:38:35,684 INFO org.apache.hadoop.hdfs.DFSUtil: Starting Web-server for secondary at: http://0.0.0.0:50090
+2018-01-23 18:38:35,751 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2018-01-23 18:38:35,760 INFO org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2018-01-23 18:38:35,765 INFO org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.secondary is not defined
+2018-01-23 18:38:35,769 INFO org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2018-01-23 18:38:35,771 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context secondary
+2018-01-23 18:38:35,772 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2018-01-23 18:38:35,772 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2018-01-23 18:38:35,800 INFO org.apache.hadoop.http.HttpServer2: Jetty bound to port 50090
+2018-01-23 18:38:35,801 INFO org.mortbay.log: jetty-6.1.26
+2018-01-23 18:38:35,972 INFO org.mortbay.log: Started HttpServer2$SelectChannelConnectorWithSafeStartup@0.0.0.0:50090
+2018-01-23 18:38:35,973 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Web server init done
+2018-01-23 18:38:35,976 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint Period   :3600 secs (60 min)
+2018-01-23 18:38:35,976 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Log Size Trigger    :1000000 txns
+2018-01-23 18:39:36,206 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Image has changed. Downloading updated image from NN.
+2018-01-23 18:39:36,449 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Opening connection to http://localhost:50070/imagetransfer?getimage=1&txid=0&storageInfo=-63:1050173558:0:CID-5b079230-e5ea-4632-b8b8-f06a0166cc47
+2018-01-23 18:39:36,487 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Image Transfer timeout configured to 60000 milliseconds
+2018-01-23 18:39:36,709 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Transfer took 0.03s at 0.00 KB/s
+2018-01-23 18:39:36,709 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Downloaded file fsimage.ckpt_0000000000000000000 size 327 bytes.
+2018-01-23 18:39:36,715 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Opening connection to http://localhost:50070/imagetransfer?getedit=1&startTxId=1&endTxId=2&storageInfo=-63:1050173558:0:CID-5b079230-e5ea-4632-b8b8-f06a0166cc47
+2018-01-23 18:39:36,720 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Transfer took 0.00s at 0.00 KB/s
+2018-01-23 18:39:36,720 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Downloaded file edits_tmp_0000000000000000001-0000000000000000002_0000000001569193022 size 0 bytes.
+2018-01-23 18:39:36,775 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Loading 1 INodes.
+2018-01-23 18:39:36,799 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Loaded FSImage in 0 seconds.
+2018-01-23 18:39:36,800 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded image for txid 0 from /tmp/hadoop-michael.wh/dfs/namesecondary/current/fsimage_0000000000000000000
+2018-01-23 18:39:36,800 INFO org.apache.hadoop.hdfs.server.namenode.NameCache: initialized with 0 entries 0 lookups
+2018-01-23 18:39:36,805 INFO org.apache.hadoop.hdfs.server.namenode.Checkpointer: Checkpointer about to load edits from 1 stream(s).
+2018-01-23 18:39:36,809 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Reading /tmp/hadoop-michael.wh/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000002 expecting start txid #1
+2018-01-23 18:39:36,810 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Start loading edits file /tmp/hadoop-michael.wh/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000002
+2018-01-23 18:39:36,822 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Edits file /tmp/hadoop-michael.wh/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000002 of size 42 edits # 2 loaded in 0 seconds
+2018-01-23 18:39:36,823 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Initializing quota with 4 thread(s)
+2018-01-23 18:39:36,827 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Quota initialization completed in 4 milliseconds
+name space=1
+storage space=0
+storage types=RAM_DISK=0, SSD=0, DISK=0, ARCHIVE=0
+2018-01-23 18:39:36,832 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Saving image file /tmp/hadoop-michael.wh/dfs/namesecondary/current/fsimage.ckpt_0000000000000000002 using no compression
+2018-01-23 18:39:36,864 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Image file /tmp/hadoop-michael.wh/dfs/namesecondary/current/fsimage.ckpt_0000000000000000002 of size 327 bytes saved in 0 seconds.
+2018-01-23 18:39:36,866 INFO org.apache.hadoop.hdfs.server.namenode.FSImageTransactionalStorageInspector: No version file in /tmp/hadoop-michael.wh/dfs/namesecondary
+2018-01-23 18:39:36,897 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Uploaded image with txid 2 to namenode at http://localhost:50070 in 0.025 seconds
+2018-01-23 18:39:36,897 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 327
